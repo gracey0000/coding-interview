@@ -238,9 +238,9 @@ Plugin은 임의의 HTTP 경로나 별도 전역 상태를 만들지 않았습�
 
 주요 제약은 다음과 같습니다.
 
-- 자료 제목 1~200자, 파일명 1~255자, 본문 최대 204800바이트
+- 자료 제목 1자 이상 200자 이하, 파일명 1자 이상 255자 이하, 본문 최대 204800바이트
 - 파일명은 경로 구분자를 허용하지 않고 `.txt` 또는 `.md` 확장자만 허용
-- 판단은 `satisfied` 또는 `needs_information`, 의견은 공백이 아닌 1~2000자
+- 판단은 `satisfied` 또는 `needs_information`, 의견은 공백이 아닌 1자 이상 2000자 이하
 - `(workspace_id, investor_id, criterion_id)` UNIQUE로 중복 검토 방지
 - 복합 FK `(workspace_id, review_id)`와 `(workspace_id, document_id)`로 다른 workspace 자료 연결 방지
 - 근거 PK `(review_id, document_id)`로 중복 연결 방지, 검토 삭제 시 근거 CASCADE
